@@ -1,4 +1,6 @@
 .letters {
     display: grid;
-    grid-row: 1;
+    grid-auto-flow: column;
+    width: 80vw;
+    text-align: center;
 }
