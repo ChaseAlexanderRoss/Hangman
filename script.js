@@ -1,13 +1,14 @@
 //-----First Input Box----------//
 //I need the box to take a string of letters and push it into an array [Done]
+var guessWord;
+var unguessed;
 var button = document.querySelector('.button')
 button.addEventListener('click', function() {
     var preGuess = document.querySelector('.input').value;
     preGuess = preGuess.toUpperCase()
-    var guessWord = preGuess.split("")
-    var unguessed = new Array(guessWord.length)
+    guessWord = preGuess.split("")
+    unguessed = new Array(guessWord.length)
     console.log(guessWord)
-    console.log(unguessed)
     var div = document.createElement('div')
     var us = '___'
     div.innerText = guessWord
@@ -24,6 +25,7 @@ button.addEventListener('click', function() {
     document.querySelector('.letterInput').style.display = 'block'
     document.querySelector('.input').style.display = 'none'
     document.querySelector('.button').style.display = 'none'
+
 })
 //--------Guessing Letter Inputs-----//
 var change = 0 
@@ -32,7 +34,7 @@ letterButton.addEventListener('click', function() {
     var guess = document.querySelector('.letterInput').value;
     guess = guess.toUpperCase()
     //console.log(guess)
-    for (i = 0; i < guess.length; i++) {
+    for (i = 0; i < guessWord.length; i++) {
         if (guessWord[i] == guess) {
             change = change + 1
             unguessed[i] = guessWord[i]
