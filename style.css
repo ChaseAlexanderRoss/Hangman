@@ -1,9 +1,12 @@
 .letters {
+    display: none;
+}
+
+.answeredLetters {
     display: grid;
     grid-auto-flow: column;
     width: 80vw;
     text-align: center;
-    color: white;
 }
 
 .letterInput, .letterButton{

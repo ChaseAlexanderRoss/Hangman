@@ -1,0 +1,14 @@
+things you need:
+an input box
+an array??? of words (pick some value in js)
+a place for all the letters to sit on screen
+The hangman (has to change as people mess up)
+
+
+make two arrays both = to guessWord length
+array guessword is the same
+boardarray or somehting like that can be an array that is just ___ for each array value
+then when a letter is guessed correctly at i a character is pushed from guessword i to board array i
+
+
+"The time for chilling is over. Now is the time for stress" - some random girl, GA, 2/7/2019

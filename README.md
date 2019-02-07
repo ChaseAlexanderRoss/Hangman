@@ -47,6 +47,6 @@ function SuccessfulLetterClick() {
 
         "This is just keeping track of what is still necessary to win"
 
-I'm only probably gonna use about half of this but I figured I'd cite the whole thing to prove my understanding, or perhaps lack thereof. Who even knows anymore
+I didn't copy and paste anything but I am using this as a basis for my code, I think I understand it now, and I'm understanding more this code in general.
 
 Problems:
