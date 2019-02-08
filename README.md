@@ -22,8 +22,8 @@ Have Fun!!! or else
 Improvements:
 
 If you have any suggestions, please help me!
-Links to repo and issues:
-
+Links to repo:
+https://github.com/ChaseAlexanderRoss/Hangman
 
 
 
