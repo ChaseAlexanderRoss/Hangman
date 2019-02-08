@@ -47,6 +47,8 @@ function SuccessfulLetterClick() {
 
         "This is just keeping track of what is still necessary to win"
 
-I didn't copy and paste anything but I am using this as a basis for my code, I think I understand it now, and I'm understanding more this code in general.
+I didn't copy and paste anything but I am using this as a basis for my code, I think I understand it now, and I'm understanding more this code in general. All of this is taken from the example linked in the repo
 
 Problems:
+I cannot for the life of me figure out how to make my array update to the page
+I can update the arrays no problem, I can maintain structure just fine, but getting that thing on the page is just not happening

@@ -3,6 +3,7 @@
 var guessWord;
 var unguessed;
 var p;
+var hangCounter;
 var button = document.querySelector('.button')
 button.addEventListener('click', function() {
     var preGuess = document.querySelector('.input').value;
@@ -19,6 +20,7 @@ button.addEventListener('click', function() {
         var p = document.createElement('p')
         unguessed[i] = us
         p.innerText = unguessed[i]
+        p.setAttribute('data-letter-index', i)
         document.querySelector('.answeredLetters').appendChild(p)
     }
     //---Turn the original input fields off and turn the new ones on---//
@@ -30,39 +32,59 @@ button.addEventListener('click', function() {
 })
 //--------Guessing Letter Inputs-----//
 var change = 0 
+var hangCounter = 0
+var correctGuess = [];
+var incorrectGuess = [];
 var letterButton = document.querySelector('.letterButton')
 letterButton.addEventListener('click', function() {
     var guess = document.querySelector('.letterInput').value;
     guess = guess.toUpperCase()
+    console.log(incorrectGuess)    
+    console.log(guess)    
+
     //console.log(guess)
+    // if(guess == allGuess) {
+    if(incorrectGuess.includes(guess)) {
+        window.alert("You've already guessed that, try something else")
+    } else {
     for (i = 0; i < guessWord.length; i++) {
         if (guessWord[i] == guess) {
             console.log('#', guessWord);
             change++;
             unguessed[i] = guessWord[i]
-            
-        
-
+            correctGuess.push(guess)
             console.log(unguessed)
-            /////////
-            p.innerText = 'unguessed'
-
-            for (i = 0; i < guessWord.length; i++) {
-
-                // if (!unguessed[i]) {
-                    // unguessed[i] = us
-                // } 
-                displayP.innerText += " " + unguessed[i]
-                document.querySelector('.answeredLetters').appendChild(p)
-            }
-            //////////
+            console.log(correctGuess)
+            // p.innerText = " " + unguessed[i]
+            // document.querySelector('.answeredLetters').appendChild(p)
         } else {
-            console.log("you're bad")
-            unguessed[i] = '___';
-    }
-}
-})
+            incorrectGuess.push(guess)
+            console.log(incorrectGuess)
+        }
 
+        // console.log(document.querySelector('.answeredLetters p[data-letter-index="' + i + '"]'))
+        // console.log(unguessed)
+        // console.log(i)
+        // console.log(unguessed[i])
+        document.querySelector('.answeredLetters p[data-letter-index="' + i + '"]').innerText = unguessed[i]
+    } 
+     if (change != 0) {
+        console.log('here')
+        change = 0
+    } else {
+        hangCounter++
+        console.log(hangCounter)
+        if (hangCounter === 8){
+            document.querySelector('.answeredLetters').style.display = 'none'
+            document.querySelector('.letterInput').style.display = 'none'
+            document.querySelector('.letterButton').style.display = 'none'
+            document.querySelector('.yl').style.display = 'block'
+        } else {
+            console.log('no loss')
+            }
+        }
+    }
+})
 
 //---Creating divs to hold each individual letter--//
 // I don't think I need to do this anymore [later note, I was wrong, glad I kept this code tho]
