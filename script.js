@@ -16,6 +16,7 @@ button.addEventListener('click', function() {
     div.innerText = guessWord
     document.querySelector('.letters').appendChild(div)
     
+    //---Create separate p's with underscores in them to display to users---//
     for (i = 0; i < guessWord.length; i++) {
         var p = document.createElement('p')
         unguessed[i] = us
@@ -44,43 +45,49 @@ letterButton.addEventListener('click', function() {
 
     //console.log(guess)
     // if(guess == allGuess) {
+
+    //---makes it so if you guess something you've already guess nothing happens---//
     if(incorrectGuess.includes(guess)) {
         window.alert("You've already guessed that, try something else")
     } else {
-    for (i = 0; i < guessWord.length; i++) {
-        if (guessWord[i] == guess) {
-            console.log('#', guessWord);
-            change++;
-            unguessed[i] = guessWord[i]
-            correctGuess.push(guess)
-            console.log(unguessed)
-            console.log(correctGuess)
+    //---checks the array with the word in it against the guess and then updates the visible array to match---//
+        for (i = 0; i < guessWord.length; i++) {
+            if (guessWord[i] == guess) {
+                console.log('#', guessWord);
+                change++;
+                unguessed[i] = guessWord[i]
+                correctGuess.push(guess)
+                console.log(unguessed)
+                console.log(correctGuess)
             // p.innerText = " " + unguessed[i]
             // document.querySelector('.answeredLetters').appendChild(p)
-        } else {
-            incorrectGuess.push(guess)
-            console.log(incorrectGuess)
-        }
+            } else {
+                //---puts bad guesses into an array---//
+                incorrectGuess.push(guess)
+                console.log(incorrectGuess)
+            }
 
         // console.log(document.querySelector('.answeredLetters p[data-letter-index="' + i + '"]'))
         // console.log(unguessed)
         // console.log(i)
         // console.log(unguessed[i])
+
+        //---this is the line that actually makes the info update on the page---//
         document.querySelector('.answeredLetters p[data-letter-index="' + i + '"]').innerText = unguessed[i]
-    } 
+    } //---this checks to see if any new letters have been filled in---/
      if (change != 0) {
-        console.log('here')
+        //console.log('here')
         change = 0
-    } else {
+    } else { //---if they haven't then this raises the counter and brings you closer to death >:)---//
         hangCounter++
-        console.log(hangCounter)
+        //console.log(hangCounter)
         if (hangCounter === 8){
             document.querySelector('.answeredLetters').style.display = 'none'
             document.querySelector('.letterInput').style.display = 'none'
             document.querySelector('.letterButton').style.display = 'none'
             document.querySelector('.yl').style.display = 'block'
         } else {
-            console.log('no loss')
+            //console.log('no loss')
             }
         }
     }
