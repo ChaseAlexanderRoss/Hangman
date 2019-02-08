@@ -2,6 +2,7 @@
 //I need the box to take a string of letters and push it into an array [Done]
 var guessWord;
 var unguessed;
+var p;
 var button = document.querySelector('.button')
 button.addEventListener('click', function() {
     var preGuess = document.querySelector('.input').value;
@@ -36,17 +37,35 @@ letterButton.addEventListener('click', function() {
     //console.log(guess)
     for (i = 0; i < guessWord.length; i++) {
         if (guessWord[i] == guess) {
-            change = change + 1
+            console.log('#', guessWord);
+            change++;
             unguessed[i] = guessWord[i]
+            
+        
+
+            console.log(unguessed)
+            /////////
+            p.innerText = 'unguessed'
+
+            for (i = 0; i < guessWord.length; i++) {
+
+                // if (!unguessed[i]) {
+                    // unguessed[i] = us
+                // } 
+                displayP.innerText += " " + unguessed[i]
+                document.querySelector('.answeredLetters').appendChild(p)
+            }
+            //////////
         } else {
             console.log("you're bad")
-        }
+            unguessed[i] = '___';
     }
+}
 })
 
 
 //---Creating divs to hold each individual letter--//
-// I don't think I need to do this anymore [later note, I was wrong, glad I kept this code tho] b/c w/ two arrays I can just move from one array to the other at i pos. Moving this to the bottom for now
+// I don't think I need to do this anymore [later note, I was wrong, glad I kept this code tho]
     // for (i=0; i<guessWord.length; i++){
     //     var div = document.createElement('div')
     //     div.className = 'underline'
