@@ -1,28 +1,30 @@
-header{
-    display: flex;
-    justify-content: center;
-}
-.intro{
-    display: flex;
-    justify-content: center;
-    width: 60vw;
+* {
+	background-color: black;
+	color: white;
 }
 
-.letters {
-    display: none;
+header {
+	display: flex;
+	justify-content: center;
+}
+
+.intro {
+	display: flex;
+	justify-content: center;
+	width: 80vw;
 }
 
 .answeredLetters {
-    display: grid;
-    grid-auto-flow: column;
-    width: 80vw;
-    text-align: center;
+	display: grid;
+	grid-auto-flow: column;
+	width: 80vw;
+	text-align: center;
 }
 
-.letterInput, .letterButton{
-    display: none;
-}
-
-.yl{
-    display: none;
+.letters,
+.letterInput,
+.letterButton,
+.yl,
+.ga {
+	display: none;
 }
