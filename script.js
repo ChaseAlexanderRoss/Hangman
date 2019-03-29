@@ -9,6 +9,10 @@ var correctGuess = [];
 var incorrectGuess = [];
 var button = document.querySelector('.button');
 var letterButton = document.querySelector('.letterButton');
+var resetButton = document.querySelector('.resetButton');
+var letters = document.querySelector('.letters');
+var answeredLetters = document.querySelector('.answeredLetters');
+const answeredLettersStyle = getComputedStyle(answeredLetters);
 
 //This function exists to turn the word in question into an array, to create an "empty" array for players to see, and to link those things. It also makes the parts of the app used for guessing visible.
 button.addEventListener('click', function() {
@@ -39,6 +43,7 @@ button.addEventListener('click', function() {
 	//Turns the stuff we don't need invisible and makes the stuff we do need visible
 	document.querySelector('.letterButton').style.display = 'block';
 	document.querySelector('.letterInput').style.display = 'block';
+	document.querySelector('.answeredLetters').style = answeredLettersStyle;
 	document.querySelector('.input').style.display = 'none';
 	document.querySelector('.button').style.display = 'none';
 });
@@ -98,5 +103,21 @@ letterButton.addEventListener('click', function() {
 	}
 	//For testing purposes
 	console.log(incorrectGuess);
-	console.log(correctGuess);
+});
+
+resetButton.addEventListener('click', function() {
+	change = 0;
+	hangCounter = 0;
+	correctGuess = [];
+	incorrectGuess = [];
+	document.querySelector('.input').style.display = 'block';
+	document.querySelector('.button').style.display = 'block';
+	document.querySelector('.answeredLetters').style.display = 'none';
+	document.querySelector('.letterInput').style.display = 'none';
+	document.querySelector('.letterButton').style.display = 'none';
+	document.querySelector('.hangCounter').style.display = 'none';
+	letters.removeChild(letters.childNodes[0]);
+	for (i = 0; i < guessWord.length; i++) {
+		answeredLetters.removeChild(answeredLetters.childNodes[0]);
+	}
 });
