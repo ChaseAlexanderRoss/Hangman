@@ -1,27 +1,63 @@
-header{
-    display: flex;
-    justify-content: center;
-}
-.intro{
-    display: flex;
-    justify-content: center;
+* {
+	background-color: black;
+	color: white;
 }
 
-.letters {
-    display: none;
+header {
+	display: flex;
+	justify-content: center;
+	margin: 25px 0;
+	font-size: 30px;
+}
+
+.intro {
+	display: flex;
+	justify-content: center;
+	width: 80vw;
+	margin: 0 auto 25px auto;
+}
+.input {
+	display: flex;
+	justify-content: center;
+	margin: auto;
+}
+
+.button {
+	display: flex;
+	justify-content: center;
+	margin: 10px auto;
+}
+
+.letterButton {
+	display: flex;
+	justify-content: center;
+	margin: 10px auto;
+}
+
+.letterInput {
+	display: flex;
+	justify-content: center;
+	margin: auto;
 }
 
 .answeredLetters {
-    display: grid;
-    grid-auto-flow: column;
-    width: 100vw;
-    text-align: center;
+	display: grid;
+	grid-auto-flow: column;
+	width: 80vw;
+	text-align: center;
+	margin: auto;
 }
 
-.letterInput, .letterButton{
-    display: none;
+.letters,
+.letterInput,
+.letterButton,
+.yl,
+.ga {
+	display: none;
 }
 
-.yl{
-    display: none;
+.resetButton {
+	display: flex;
+	justify-content: center;
+	margin: auto;
 }

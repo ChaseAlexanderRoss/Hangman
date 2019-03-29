@@ -1,35 +1,28 @@
-Chase's Hangman Game:
+## Eight Steps To Death
+    Eight Steps to Death is a re-imagining of the game "Hangman" in which, instead of being hung, you are being chased by the Grimm Reaper, Death themself. The game rules follow the exact same rules as Hangman (if you're unfamiliar with the rules of Hangman follow this link to learn the basic rules: https://www.wikihow.com/Play-Hangman). This means 
 
-My project is a Hangman game, used to play Hangman
+## Getting Started
+    In order to play the game, you'll need to clone down the repo to your local machine, and from there, open the index.html file in your favorite browser. This will bring up a tab with the game in it.
 
-My Hangman Game:
-Allows user input to create a word of their choosing 
-Creates an array of potential answers
-Keeps track of input guesses and prevents you from making the same guess twice
-tells you you've lost when you guess wrong 8 times.
+## Give examples
+     First, you need to clone down the repo to your personal computer
+    Once you've cloned down the repo, open your terminal and cd into the folder
+    Run the command ```open index.html```
+    Enjoy the game!
 
-Tech Used: 
-HTML
-CSS
-JavaScript
+## Built With
+    HTML
+    CSS
+    Javascript
 
-Use instructions:
-Go to the github website
-Enter a word of your choice into the bar
-Have someone else guess the word by inputting their guessed letter, one at a time, into the input bar
-Have Fun!!! or else
-
-Improvements:
-
-If you have any suggestions, please help me!
-Links to repo:
-https://github.com/ChaseAlexanderRoss/Hangman
+## Contributing
+    If you have any contributions, they are very welcome! Please feel free to submit a pull request or an issue, and I'll be sure to look at it!
 
 
-
-Cited Sources:
-Stole the whole //--Title for thing being worked on--// from the hangman example linked in the repo
-W3 schools was usde for almost everything
-Ryan helps fill in the gaps and explains things like a human would 
-Hammad helped me finalize my code and getting it to push to the actual page
-
+## Authors
+    Chase Ross
+    
+## Acknowledgments
+    Thank you to The Brothers Grimm for filling my head with dark fantasy
+    Thank you to my instructors who helped me through this project
+    Thank you for MDN and W3Schools
