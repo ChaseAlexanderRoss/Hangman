@@ -45,7 +45,7 @@ button.addEventListener('click', function() {
 
 //This button works so that when you click it it makes the letters in the array visible if you guessed correctly, tells you you failed if you guess wrong, keeps track of all the letters guessed so far, and prevents you from guessing the same letter multiple times.
 
-//The button in questino
+//The button in question
 letterButton.addEventListener('click', function() {
 	//grabs the input value in the search bar
 	var guess = document.querySelector('.letterInput').value;
@@ -89,7 +89,7 @@ letterButton.addEventListener('click', function() {
 				document.querySelector('.letterButton').style.display = 'none';
 				document.querySelector('.hangCounter').style.display = 'none';
 				document.querySelector('.yl').style.display = 'block';
-				//Otherwise console log how many tries you have left.
+				//Otherwise a div states how many tries you have left.
 			} else {
 				hC = document.querySelector('.hangCounter');
 				hC.innerText = `${8 - hangCounter} steps from Death`;
