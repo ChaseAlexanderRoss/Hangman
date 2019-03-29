@@ -24,7 +24,7 @@ button.addEventListener('click', function() {
 	var div = document.createElement('div');
 	//the empty spaces for unguessed letters
 	var us = '___';
-	//Put the guessword into the div
+	//Put the guessword into the div we just generated.
 	div.innerText = guessWord;
 	//make the div a child of the letters div
 	document.querySelector('.letters').appendChild(div);
@@ -68,13 +68,15 @@ letterButton.addEventListener('click', function() {
 				//put the guess into an array of correctly guessed letters
 				correctGuess.push(guess);
 				//If every guess that goes through the array is false
-			} else if (incorrectGuess.every(guess) == true) {
+			} else if ((incorrectGuess[i] = guess)) {
 				//push the letter into the incorrect part
 				incorrectGuess.push(guess);
 			}
 			//Actually updates the document, it goes here to make sure all the letters are correct
 			document.querySelector('.answeredLetters p[data-letter-index="' + i + '"]').innerText = unguessed[i];
-		} //If change != 0, then that means a letter was correctly guessed. So therefore there's no punishment. It resets the counter to 0 so that it will work on the next attempt
+		}
+
+		//If change != 0, then that means a letter was correctly guessed. So therefore there's no punishment. It resets the counter to 0 so that it will work on the next attempt
 		if (change != 0) {
 			change = 0;
 			//This increases the actual "wrong guess" counter, but the hangcounter is cooler.
@@ -85,10 +87,12 @@ letterButton.addEventListener('click', function() {
 				document.querySelector('.answeredLetters').style.display = 'none';
 				document.querySelector('.letterInput').style.display = 'none';
 				document.querySelector('.letterButton').style.display = 'none';
+				document.querySelector('.hangCounter').style.display = 'none';
 				document.querySelector('.yl').style.display = 'block';
 				//Otherwise console log how many tries you have left.
 			} else {
-				console.log(`${8 - hangCounter} steps from death`);
+				hC = document.querySelector('.hangCounter');
+				hC.innerText = `${8 - hangCounter} steps from Death`;
 			}
 		}
 	}
